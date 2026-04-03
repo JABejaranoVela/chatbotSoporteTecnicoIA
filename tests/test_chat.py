@@ -1,6 +1,7 @@
 from fastapi.testclient import TestClient
 
 from app.main import app
+from app.nlp.intent_classifier import classify_intent
 
 
 client = TestClient(app)
@@ -56,3 +57,33 @@ def test_chat_endpoint_normalizes_message() -> None:
 
     assert response.status_code == 200
     assert response.json()["normalized_message"] == "login"
+
+
+def test_chat_endpoint_keeps_behavior_with_spacy_preprocessing() -> None:
+    response = client.post("/chat", json={"message": "¡La IMPRESORA no imprime!"})
+
+    assert response.status_code == 200
+    assert response.json()["matched"] is True
+    assert response.json()["category"] == "impresora"
+    assert "impresora" in response.json()["normalized_message"]
+    assert "imprimir" in response.json()["normalized_message"]
+
+
+def test_intent_classifier_predicts_password_category() -> None:
+    prediction = classify_intent("He olvidado mi password de acceso")
+
+    assert prediction.category == "password"
+    assert prediction.confidence > 0.45
+
+
+def test_intent_classifier_predicts_vpn_category() -> None:
+    prediction = classify_intent("La vpn remota no conecta desde casa")
+
+    assert prediction.category == "vpn"
+    assert prediction.confidence > 0.45
+
+
+def test_intent_classifier_uses_fallback_for_unknown_message() -> None:
+    prediction = classify_intent("Dispositivo biometrico de laboratorio con error exotico")
+
+    assert prediction.category == "fallback"

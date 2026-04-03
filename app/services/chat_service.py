@@ -1,25 +1,18 @@
 import json
-import re
 from pathlib import Path
 from typing import Any
 
 from app.models.chat import ChatResponse
+from app.nlp.intent_classifier import classify_intent
+from app.nlp.preprocessing import preprocess_text
 
 
 FAQS_PATH = Path(__file__).resolve().parents[2] / "data" / "json" / "faqs.json"
-INTENTS_PATH = Path(__file__).resolve().parents[2] / "data" / "json" / "intents.json"
 RULES_PATH = Path(__file__).resolve().parents[2] / "data" / "json" / "rules.json"
 FALLBACK_ANSWER = (
     "No encontre una respuesta clara para esa consulta. "
     "Prueba a reformularla con mas detalle tecnico."
 )
-
-
-def normalize_text(text: str) -> str:
-    normalized = text.strip().lower()
-    normalized = re.sub(r"[^\w\s]", " ", normalized)
-    normalized = re.sub(r"\s+", " ", normalized)
-    return normalized.strip()
 
 
 def load_faqs() -> list[dict[str, Any]]:
@@ -29,31 +22,9 @@ def load_faqs() -> list[dict[str, Any]]:
     return data.get("faqs", [])
 
 
-def load_intents() -> list[dict[str, Any]]:
-    with INTENTS_PATH.open("r", encoding="utf-8") as file:
-        data = json.load(file)
-
-    return data.get("intents", [])
-
-
 def load_rules() -> dict[str, Any]:
     with RULES_PATH.open("r", encoding="utf-8") as file:
         return json.load(file)
-
-
-def detect_category(normalized_message: str) -> str:
-    for intent in load_intents():
-        category = intent.get("category", "fallback")
-        examples = {normalize_text(example) for example in intent.get("examples", [])}
-        keywords = {normalize_text(keyword) for keyword in intent.get("keywords", [])}
-
-        if any(example in normalized_message for example in examples if example):
-            return category
-
-        if any(keyword in normalized_message for keyword in keywords if keyword):
-            return category
-
-    return "fallback"
 
 
 def find_faq_by_category(category: str, normalized_message: str) -> ChatResponse | None:
@@ -63,8 +34,8 @@ def find_faq_by_category(category: str, normalized_message: str) -> ChatResponse
         if faq.get("category") != category:
             continue
 
-        keywords = {normalize_text(keyword) for keyword in faq.get("keywords", [])}
-        question = normalize_text(faq.get("question", ""))
+        keywords = {preprocess_text(keyword).normalized_text for keyword in faq.get("keywords", [])}
+        question = preprocess_text(faq.get("question", "")).normalized_text
 
         if keywords and any(keyword in normalized_message for keyword in keywords):
             return ChatResponse(
@@ -107,8 +78,9 @@ def find_rule_by_category(category: str, normalized_message: str) -> ChatRespons
 
 
 def find_faq_answer(message: str) -> ChatResponse:
-    normalized_message = normalize_text(message)
-    category = detect_category(normalized_message)
+    normalized_message = preprocess_text(message).normalized_text
+    prediction = classify_intent(message)
+    category = prediction.category
 
     faq_response = find_faq_by_category(category, normalized_message)
     if faq_response is not None:

@@ -1,0 +1,76 @@
+{
+    "queries": [
+        {
+            "message": "Hola, necesito ayuda tecnica",
+            "expected_category": "saludo"
+        },
+        {
+            "message": "Buenos dias, tengo una consulta",
+            "expected_category": "saludo"
+        },
+        {
+            "message": "Mi wifi no conecta desde el portatil",
+            "expected_category": "wifi"
+        },
+        {
+            "message": "No veo la red wifi de la oficina",
+            "expected_category": "wifi"
+        },
+        {
+            "message": "No tengo internet en el ordenador",
+            "expected_category": "internet"
+        },
+        {
+            "message": "La conexion a internet esta caida",
+            "expected_category": "internet"
+        },
+        {
+            "message": "He olvidado mi password de acceso",
+            "expected_category": "password"
+        },
+        {
+            "message": "No puedo iniciar sesion con mi contrasena",
+            "expected_category": "password"
+        },
+        {
+            "message": "No recibo correos en Outlook",
+            "expected_category": "correo"
+        },
+        {
+            "message": "Mi correo no sincroniza",
+            "expected_category": "correo"
+        },
+        {
+            "message": "La impresora no imprime",
+            "expected_category": "impresora"
+        },
+        {
+            "message": "Hay un atasco de papel en la impresora",
+            "expected_category": "impresora"
+        },
+        {
+            "message": "La vpn remota no conecta",
+            "expected_category": "vpn"
+        },
+        {
+            "message": "No puedo entrar por la VPN desde casa",
+            "expected_category": "vpn"
+        },
+        {
+            "message": "Un programa da error y no abre",
+            "expected_category": "software"
+        },
+        {
+            "message": "El software va lento y se bloquea",
+            "expected_category": "software"
+        },
+        {
+            "message": "Tengo una duda sobre un dispositivo biometrico de laboratorio",
+            "expected_category": "fallback"
+        },
+        {
+            "message": "Consulta sobre un sistema industrial no contemplado",
+            "expected_category": "fallback"
+        }
+    ]
+}

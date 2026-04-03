@@ -1,0 +1,28 @@
+{
+    "rules": {
+        "wifi": {
+            "diagnostic": "Guia basica WiFi: comprueba que el adaptador inalambrico este activo, revisa la intensidad de la senal, elimina la red guardada y vuelve a conectarte con la clave correcta."
+        },
+        "internet": {
+            "diagnostic": "Guia basica de internet: valida que el router tenga conexion, reinicia router y equipo, y prueba si otros dispositivos navegan correctamente."
+        },
+        "password": {
+            "diagnostic": "Guia basica de credenciales: verifica usuario y contrasena, revisa bloqueo de mayusculas y usa el procedimiento de restablecimiento si el acceso sigue fallando."
+        },
+        "correo": {
+            "diagnostic": "Guia basica de correo: revisa la conectividad, el espacio disponible en el buzon y la configuracion de sincronizacion de la cuenta."
+        },
+        "impresora": {
+            "diagnostic": "Guia basica de impresora: confirma alimentacion, conexion USB o de red, nivel de papel y tinta, y ejecuta una impresion de prueba."
+        },
+        "vpn": {
+            "diagnostic": "Guia basica de VPN: confirma acceso a internet, revisa credenciales, reinicia el cliente VPN y valida si hay restricciones de red local."
+        },
+        "software": {
+            "diagnostic": "Guia basica de software: cierra y abre de nuevo la aplicacion, reinicia el equipo, revisa actualizaciones y confirma permisos de ejecucion."
+        },
+        "saludo": {
+            "diagnostic": "Hola. Describe el problema tecnico con una frase corta, por ejemplo: no funciona internet, no puedo iniciar sesion o la impresora no imprime."
+        }
+    }
+}

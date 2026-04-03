@@ -1,0 +1,58 @@
+{
+    "faqs": [
+        {
+            "category": "saludo",
+            "question": "hola",
+            "keywords": ["hola", "buenas", "saludos"],
+            "answer": "Hola. Puedes indicar tu incidencia tecnica y te dare una orientacion inicial."
+        },
+        {
+            "category": "wifi",
+            "question": "no conecta wifi",
+            "keywords": ["wifi", "inalambrica", "ssid"],
+            "answer": "Comprueba que el WiFi este activado, valida que estas usando la red correcta y vuelve a conectarte introduciendo la clave de nuevo."
+        },
+        {
+            "category": "internet",
+            "question": "no funciona internet",
+            "keywords": ["internet", "conexion", "sin internet", "sin red"],
+            "answer": "Revisa si el router esta encendido, verifica la conexion WiFi y reinicia el equipo de red si es necesario."
+        },
+        {
+            "category": "password",
+            "question": "no puedo iniciar sesion",
+            "keywords": ["login", "sesion", "contrasena", "acceso"],
+            "answer": "Comprueba usuario y contrasena, revisa si el bloqueo de mayusculas esta activo y restablece la clave si el problema continua."
+        },
+        {
+            "category": "correo",
+            "question": "no recibo correos",
+            "keywords": ["correo", "email", "outlook", "bandeja"],
+            "answer": "Verifica la conexion, revisa la carpeta de correo no deseado y confirma que la cuenta este sincronizando correctamente."
+        },
+        {
+            "category": "impresora",
+            "question": "la impresora no imprime",
+            "keywords": ["impresora", "imprimir", "papel", "cartucho"],
+            "answer": "Comprueba que la impresora este encendida, sin atascos de papel y conectada al equipo o a la red correcta."
+        },
+        {
+            "category": "vpn",
+            "question": "no conecta la vpn",
+            "keywords": ["vpn", "remoto", "tunel", "cliente vpn"],
+            "answer": "Confirma que tienes conexion a internet, revisa tus credenciales y vuelve a iniciar el cliente VPN."
+        },
+        {
+            "category": "software",
+            "question": "el ordenador va lento",
+            "keywords": ["lento", "rendimiento", "ordenador", "pc", "programa"],
+            "answer": "Cierra programas innecesarios, reinicia el equipo y verifica si hay procesos consumiendo demasiados recursos."
+        },
+        {
+            "category": "software",
+            "question": "un programa no abre",
+            "keywords": ["software", "aplicacion", "programa", "error"],
+            "answer": "Cierra la aplicacion, reinicia el equipo y comprueba si el software necesita actualizacion o reinstalacion."
+        }
+    ]
+}

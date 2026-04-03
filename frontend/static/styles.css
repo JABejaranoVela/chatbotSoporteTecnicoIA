@@ -1,0 +1,52 @@
+body {
+    background: #f4f6f9;
+    color: #1f2937;
+}
+
+.chat-shell {
+    max-width: 760px;
+}
+
+.chat-title {
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.chat-subtitle {
+    color: #6b7280;
+}
+
+.messages-box {
+    min-height: 260px;
+    max-height: 420px;
+    overflow-y: auto;
+    padding: 1rem;
+    border: 1px solid #dbe2ea;
+    border-radius: 0.75rem;
+    background: #ffffff;
+}
+
+.message {
+    margin-bottom: 0.75rem;
+    padding: 0.75rem 0.9rem;
+    border-radius: 0.75rem;
+    line-height: 1.5;
+}
+
+.message-user {
+    background: #dbeafe;
+}
+
+.message-bot {
+    background: #eef2f7;
+}
+
+.message-error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.status-text {
+    min-height: 1.5rem;
+    font-size: 0.95rem;
+}

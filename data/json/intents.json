@@ -1,0 +1,49 @@
+{
+    "intents": [
+        {
+            "category": "saludo",
+            "keywords": ["hola", "buenas", "saludos"],
+            "examples": ["hola", "buenos dias", "buenas tardes"]
+        },
+        {
+            "category": "wifi",
+            "keywords": ["wifi", "inalambrica", "ssid"],
+            "examples": ["no conecta wifi", "el wifi falla", "no veo la red wifi"]
+        },
+        {
+            "category": "internet",
+            "keywords": ["internet", "sin internet", "conexion", "red"],
+            "examples": ["no funciona internet", "no tengo conexion", "internet caido"]
+        },
+        {
+            "category": "password",
+            "keywords": ["contrasena", "password", "clave", "login", "sesion"],
+            "examples": ["no puedo iniciar sesion", "olvide la contrasena", "no recuerdo mi password"]
+        },
+        {
+            "category": "correo",
+            "keywords": ["correo", "email", "outlook", "mail"],
+            "examples": ["no recibo correos", "correo bloqueado", "outlook no sincroniza"]
+        },
+        {
+            "category": "impresora",
+            "keywords": ["impresora", "imprimir", "cartucho", "papel"],
+            "examples": ["la impresora no imprime", "atasco de papel", "no detecta la impresora"]
+        },
+        {
+            "category": "vpn",
+            "keywords": ["vpn", "remoto", "tunel", "cliente vpn"],
+            "examples": ["no conecta la vpn", "fallo acceso remoto", "vpn desconectada"]
+        },
+        {
+            "category": "software",
+            "keywords": ["software", "aplicacion", "programa", "error", "lento"],
+            "examples": ["un programa no abre", "el sistema va lento", "error en la aplicacion"]
+        },
+        {
+            "category": "fallback",
+            "keywords": [],
+            "examples": []
+        }
+    ]
+}

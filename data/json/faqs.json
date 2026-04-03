@@ -3,7 +3,7 @@
         {
             "category": "saludo",
             "question": "hola",
-            "keywords": ["hola", "buenas", "saludos"],
+            "keywords": ["hola", "buenas", "saludos", "buenos dias", "ayuda tecnica"],
             "answer": "Hola. Puedes indicar tu incidencia tecnica y te dare una orientacion inicial."
         },
         {
@@ -39,7 +39,7 @@
         {
             "category": "vpn",
             "question": "no conecta la vpn",
-            "keywords": ["vpn", "remoto", "tunel", "cliente vpn"],
+            "keywords": ["vpn", "remoto", "tunel", "cliente vpn", "acceso remoto", "desde casa"],
             "answer": "Confirma que tienes conexion a internet, revisa tus credenciales y vuelve a iniciar el cliente VPN."
         },
         {

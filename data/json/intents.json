@@ -2,18 +2,18 @@
     "intents": [
         {
             "category": "saludo",
-            "keywords": ["hola", "buenas", "saludos"],
-            "examples": ["hola", "buenos dias", "buenas tardes"]
+            "keywords": ["hola", "buenas", "saludos", "buenos dias", "ayuda tecnica"],
+            "examples": ["hola", "buenos dias", "buenas tardes", "necesito ayuda tecnica", "tengo una consulta"]
         },
         {
             "category": "wifi",
-            "keywords": ["wifi", "inalambrica", "ssid"],
-            "examples": ["no conecta wifi", "el wifi falla", "no veo la red wifi"]
+            "keywords": ["wifi", "inalambrica", "ssid", "red wifi"],
+            "examples": ["no conecta wifi", "el wifi falla", "no veo la red wifi", "mi wifi no conecta desde el portatil"]
         },
         {
             "category": "internet",
-            "keywords": ["internet", "sin internet", "conexion", "red"],
-            "examples": ["no funciona internet", "no tengo conexion", "internet caido"]
+            "keywords": ["internet", "sin internet", "conexion", "red", "no tengo internet"],
+            "examples": ["no funciona internet", "no tengo conexion", "internet caido", "no tengo internet en el ordenador"]
         },
         {
             "category": "password",
@@ -32,8 +32,8 @@
         },
         {
             "category": "vpn",
-            "keywords": ["vpn", "remoto", "tunel", "cliente vpn"],
-            "examples": ["no conecta la vpn", "fallo acceso remoto", "vpn desconectada"]
+            "keywords": ["vpn", "remoto", "tunel", "cliente vpn", "acceso remoto", "desde casa"],
+            "examples": ["no conecta la vpn", "fallo acceso remoto", "vpn desconectada", "no puedo entrar por la vpn", "vpn desde casa"]
         },
         {
             "category": "software",

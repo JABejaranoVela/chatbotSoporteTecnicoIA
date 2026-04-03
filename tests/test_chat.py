@@ -43,6 +43,22 @@ def test_chat_endpoint_returns_software_answer() -> None:
     assert response.json()["source"] == "faq"
 
 
+def test_chat_endpoint_returns_saludo_answer() -> None:
+    response = client.post("/chat", json={"message": "Buenos dias, tengo una consulta"})
+
+    assert response.status_code == 200
+    assert response.json()["matched"] is True
+    assert response.json()["category"] == "saludo"
+
+
+def test_chat_endpoint_returns_vpn_answer_from_home_phrase() -> None:
+    response = client.post("/chat", json={"message": "No puedo entrar por la VPN desde casa"})
+
+    assert response.status_code == 200
+    assert response.json()["matched"] is True
+    assert response.json()["category"] == "vpn"
+
+
 def test_chat_endpoint_returns_fallback_when_no_match() -> None:
     response = client.post("/chat", json={"message": "Necesito ayuda con un dispositivo biometrico de laboratorio"})
 

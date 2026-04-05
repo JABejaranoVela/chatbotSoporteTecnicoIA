@@ -8,19 +8,21 @@ Base academica de un chatbot de soporte tecnico en Python. El proyecto ya incluy
 - Uvicorn
 - Pydantic
 - spaCy
-- sentence-transformers
 - scikit-learn
 - Reglas en Python
 - JSON
-- SQLite
 - HTML + Bootstrap + JavaScript
 
-## Estructura base
+## Estructura actual
 - `app/`: backend y organizacion principal
-- `data/json/`: archivos de conocimiento e intenciones
-- `data/sqlite/`: base SQLite local
+- `app/api/`: rutas y endpoints FastAPI
+- `app/models/`: esquemas Pydantic
+- `app/services/`: logica principal del chatbot
+- `app/nlp/`: preprocesado y clasificacion de intenciones
+- `data/json/`: FAQs, intenciones, reglas y consultas de evaluacion
 - `frontend/templates/`: vistas HTML
 - `frontend/static/`: CSS y JavaScript
+- `scripts/`: scripts auxiliares, incluida la evaluacion
 - `tests/`: pruebas
 - `docs/`: documentacion academica
 
@@ -37,17 +39,16 @@ La API base quedara disponible en `http://127.0.0.1:8000` y la documentacion aut
 ## Alcance de esta fase
 - Documentacion persistente del repositorio
 - Plan por fases
-- Estructura base de carpetas
-- Dependencias iniciales
-- Endpoints `/health` y `/chat`
+- API con endpoints `/health`, `/chat` y pagina principal `/`
 - Preprocesado basico con spaCy
 - Clasificacion de intenciones con TF-IDF + LogisticRegression
 - FAQs, intenciones y reglas en JSON
-- Skills reutilizables para futuras iteraciones
+- Script de evaluacion con consultas etiquetadas
+- Pruebas basicas de API y clasificacion
 
 ## Alcance fuera de esta fase
-- Recuperacion semantica
-- Persistencia funcional de conversaciones
+- Persistencia con SQLite
+- Recuperacion semantica con embeddings
 - Multi-turno real
 
 ## Clasificador de intenciones

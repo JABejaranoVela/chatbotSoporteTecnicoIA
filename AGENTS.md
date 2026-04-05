@@ -1,7 +1,7 @@
 # Repository Guidelines
 
 ## Scope and Principles
-This repository hosts an academic, modular, and intentionally simple technical-support chatbot in Python. Keep the stack fixed to FastAPI, Uvicorn, Pydantic, spaCy, sentence-transformers, scikit-learn, Python rules, JSON, SQLite, and a lightweight HTML + Bootstrap + JavaScript frontend.
+This repository hosts an academic, modular, and intentionally simple technical-support chatbot in Python. Keep the stack fixed to FastAPI, Uvicorn, Pydantic, spaCy, scikit-learn, Python rules, JSON, and a lightweight HTML + Bootstrap + JavaScript frontend. SQLite and sentence-transformers should only be introduced if the project requirements explicitly move into those phases.
 
 Avoid overengineering. Do not introduce React, Angular, Docker, Redis, external databases, message brokers, or cloud-only services unless the project requirements change explicitly.
 
@@ -10,16 +10,13 @@ Use the repository layout below as the default convention:
 
 - `app/` backend code
 - `app/api/` FastAPI routers
-- `app/core/` settings and shared configuration
 - `app/models/` Pydantic schemas
 - `app/services/` orchestration services
-- `app/nlp/` NLP preprocessing, embeddings, and similarity helpers
-- `app/rules/` rule-based support logic
-- `app/db/` SQLite access layer
-- `data/json/` curated intents, FAQs, or seed knowledge
-- `data/sqlite/` local database files
+- `app/nlp/` NLP preprocessing and classification helpers
+- `data/json/` curated intents, FAQs, rules, and evaluation samples
 - `frontend/templates/` HTML views
 - `frontend/static/` Bootstrap assets, custom CSS, and JavaScript
+- `scripts/` local evaluation or support scripts
 - `tests/` unit and integration tests
 - `docs/` academic notes and supporting documentation
 
@@ -32,9 +29,9 @@ Keep modules small. Put request and response schemas in `app/models/`, HTTP conc
 Build incrementally. The first implementation target is a clean skeleton, not a full chatbot. Add functionality in phases:
 
 1. Base FastAPI app and project wiring
-2. JSON knowledge base and SQLite persistence
+2. JSON knowledge base and API contracts
 3. Rule-based response layer
-4. NLP pipeline with spaCy and sentence-transformers
+4. NLP pipeline with spaCy and scikit-learn
 5. Evaluation, validation, and documentation
 
 Prefer deterministic, inspectable code over hidden complexity. If a simple ruleset solves a case, do not replace it with a heavier abstraction.

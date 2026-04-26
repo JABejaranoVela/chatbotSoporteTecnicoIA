@@ -12,7 +12,7 @@ FRONTEND_DIR = BASE_DIR / "frontend"
 
 app = FastAPI(
     title="chatbot-soporte-tecnico-ia",
-    description="Base API for an academic technical-support chatbot project.",
+    description="Base API for technical-support chatbot project.",
     version="0.1.0",
 )
 
